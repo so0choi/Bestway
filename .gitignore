@@ -1,5 +1,5 @@
 public/resources/defact_images
-config
+config/
 # Temp Files (csv, zip)
 temp/*.csv
 temp/*.zip
