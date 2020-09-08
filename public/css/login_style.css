@@ -1,0 +1,65 @@
+.div-login-box {
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.div-login-form {
+    padding: 10px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.form-login {
+    display: flex;
+}
+
+.form-login #login_id,
+.form-login #login_pw {
+    font-size: 17px;
+    font-weight: 500;
+    width: 170px;
+    border: none;
+    padding: 7px;
+    border: none;
+    border-bottom: 1px solid #999;
+}
+
+.div-login-left-input {
+    margin-left: 40px;
+    width: 180px;
+}
+
+.div-login-right-input {
+    width: 65px;
+}
+
+.div-wrapper-input {
+    margin-top: 4px;
+}
+
+#login-submit-bt {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    background: dodgerblue;
+    color: white;
+    border: none;
+    border-radius: 50%; /*make circle*/
+    padding: 0px;
+    margin-top: 37%;
+}
+
+.div-join-bt {
+    margin-top: 50px;
+}
+
+.login-bt{
+    background: inherit;
+    border: none;
+    border-bottom: 2px solid dodgerblue;
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    padding: 4px 5px;
+    margin: 0 5px 0 5px;
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueCheck</title>
+    <link rel="stylesheet" type="text/css" href="css/list_defact_style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/list_defact_style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/public/script/list_defact.js" type="text/javascript"></script>
+</head>
+
+<body onload="addEvent(); rejectEvent();">
+    <div class="div-view">
+        <div class="div-defact-box">
+            <div class="div-wrapper-backward">
+                <input type="button" id="backward-bt" value="＜" onclick="location.href='/defact/drawing/<%=ho%>'">
+            </div>
+
+            <div class="div-wrapper-add">
+                <span id="span-defact-add-bt" onclick="go_add_defact()">＋</span>
+            </div>
+
+            <div class="div-title">
+                <span id="span_loc"><%=loc%></span>
+                <div class="div-wrapper-dongho">
+                    <span id="span_defact_dongho">
+                        <span id="span_dong"><%=dong%></span>동 <span id="span_ho"><%=ho%></span>호
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div id="div-defact-container">
+            <div class="div-defact-list-box">
+                <div class="div-list-title">하자</div>
+                <div id="div_defact_list" class="div-defact-list">
+                    <% if(!unsolvedDefact.length ==0){ unsolvedDefact.forEach(function(element, index) { img_location='/public/resources/defact_images'+element.img; %>
+                    <!----이미지 확장자 변경될시 수정할 것---->
+                    <div class="div-defact-item" defact-id="<%=element.id%>" style="background-image:url('<%=img_location%>');"><%=element.d%></div>
+                    <% }); } else {%>
+                    
+                    <div class="div-if-none">
+                        <p>유지/보수 건이 없습니다
+                        </p><% } %>
+                    </div>
+                </div>
+       
+
+            <div class="div-end-list-box">
+                <div class="div-list-title">보수 완료</div>
+                <div id="div_end_list" class="div-end-list">
+                    <% if(!solvedDefact.length ==0){ solvedDefact.forEach(function(element, index) { img_location='/public/resources/defact_images'+element.img; if(element.is_reject==0){rejectText='미확인'; rejectCol='#1B4C7A';} else if(element.is_reject==1){rejectText='반려됨'; rejectCol='crimson';} else if(element.is_reject==2){rejectText='승인됨';rejectCol='#33AC27';}%>
+                    <div class="div-defact-item" defact-id="<%=element.id%>" style="background-image:url('<%=img_location%>'); ">
+                       <div class="div-bt-wrapper">
+                           <div class="div-status-bar" style="background-color:<%=rejectCol%>"><%=rejectText%>
+                           </div>
+                        <div class="div-commit-bt" id="div_green_bt">
+                        </div>
+                        <div class="div-commit-bt" id="div_red_bt">
+                        </div>
+                        </div>
+                    </div>
+                    <% }); } else {%>
+                    <div class="div-if-none">
+                        <p>완료 건이 없습니다
+                        </p><% } %>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

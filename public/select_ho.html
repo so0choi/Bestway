@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueCheck</title>
+
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/select_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/public/script/select_and_route.js" type="text/javascript"></script>
+
+    <!--Floating Unsolved Defact Icon-->
+    <script>
+        function showIcon() {
+            var ho_data = [<%=ho_data%>];
+            ho_data.forEach(function(e, i) {
+                target = document.getElementById('h' + i);
+                if (e != 0) {
+                    target.style.display = 'inline-block';
+                    target.innerHTML = e;
+                }
+
+            });
+        }
+    </script>
+
+</head>
+
+<body onload="addList(); appendHo(); showIcon();">
+    <div class="div-view">
+        <div id="div_user_info">
+            <span id="span_user">
+                <% if(locals.name){ %> <%=locals.name%> <% } %>
+                <% if(locals.type){ %> <%=locals.type%>님<% }%>
+            </span>
+        </div>
+
+        <div class="div-select-box">
+            <div class="div-wrapper-backward">
+                <input type="button" id="backward-bt" value="＜" onclick="location.href = '/select/dong/<%=ctype%>';">
+            </div>
+            <div id="div-ho-box">
+                <div class="div-title">
+                    호 선택
+                    <div class="div-wrapper-ho">
+                        <span id="span_dong"><%=dong%>동</span>
+                    </div>
+                </div>
+
+                <div id="div_ho_target" class="div-ho-list">
+                    <!--HO APPEND-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

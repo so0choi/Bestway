@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueCheck</title>
+    <link rel="stylesheet" type="text/css" href="css/view_defact_style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/view_defact_style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/public/script/select_and_route.js" type="text/javascript"></script>
+
+    <!--Pixel Loader-->
+    <script src="/public/script/drawing_point.js" type="text/javascript"></script>
+
+    <!--Floating Unsolved Defact Icon-->
+    <script>
+        const room_name = ["현관", "거실", "발코니1", "발코니2", "발코니3", "침실1", "침실2", "침실3", "주방,식당", "욕실1", "욕실2"];
+
+        function showIcon() {
+            var data = [<%= data_cnt %>];
+            data.forEach(function(e, i) {
+                target = document.getElementById('point' + i);
+
+                if (e != 0) {
+                    target.innerHTML = e + '<div class="px-point-title">' + room_name[i] + '</div>';
+                    target.style.backgroundColor = 'crimson';
+                }
+
+            });
+        }
+
+    </script>
+</head>
+
+<body onload="loadDrawingPoint(); addClickEvent(); showIcon();">
+    <div class="div-view">
+        <div class="div-defact-box">
+           <div class="div-wrapper-backward">
+                    <input type="button" id="backward-bt" value="＜" onclick="location.href='/select/ho/<%=dong%>'">
+                </div>
+
+            <div class="div-title">
+                <span id="span_defact_dong">
+                    <%= dong %></span>동 <span id="span_defact_ho"><%= ho %></span>호
+            </div>
+
+
+            <div class="div-drawing-box" id="div_drawing">
+                <!--Apartment drawing point here-->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

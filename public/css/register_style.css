@@ -1,0 +1,56 @@
+.div-login-box {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.div-login-form {
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.div-wrapper-input{
+    margin-bottom: 6px;
+}
+
+.div-wrapper-input input{
+    font-size: 17px;
+    font-weight: 500;
+    width: 250px;
+    padding: 8px;
+    border: none;
+    border-bottom: 1px solid #999;
+}
+
+.div-wrapper-submit{
+    margin-top: 20px;
+}
+
+#reg_submit_bt{
+    font-size: 18px;
+    font-weight: 500;
+    padding: 7px 10px;
+    background: dodgerblue;
+    color: white;
+    border: none;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + div {
+    display: inline-block;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.div-type-bt{
+    display: inline-block;
+    width: 100px;
+    background: #ddd;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 5px;
+    margin-bottom: 5px;
+}

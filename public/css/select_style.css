@@ -1,0 +1,133 @@
+.div-select-box {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + div {
+    display: inline-block;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.div-dong-list{
+    margin: 30px 0 30px 15px;
+}
+
+.div-dong-bt{
+    width: 72px;
+    height: 45px;
+    padding-left: 15px;
+    padding-top: 12px;
+    font-size: 22px;
+    font-weight: 600;
+    display: inline-block;
+    color: #333;
+    border: 1px solid #c6c6c6;
+    border-bottom-color: #c1c1c1;
+    border-radius: .25em;
+    margin: 5px 3px 10px 3px;
+}
+
+.div-ho-list{
+    margin: 30px 0 30px 10px;
+}
+
+.div-ho-bt{
+    width: 65px;
+    height: 38px;
+    padding-top: 8px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    display: inline-block;
+    color: #333;
+    border: 1px solid #c6c6c6;
+    border-bottom-color: #c1c1c1;
+    border-radius: .25em;
+    margin: 3px 3px 6px 3px;
+}
+
+#span_dong{
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    padding: 2px 5px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+}
+
+.div-wrapper-ho{
+    margin-top: -3px;
+    margin-bottom: -15px;
+}
+
+.div-dong-float-icon{
+    display: none;
+    float: right;
+    margin-top: -50px;
+    font-size: 11px;
+    font-weight: 500;
+    width: 16px;
+    height: 16px;
+    background: crimson;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.div-ho-float-icon{
+    position: absolute;
+    display: none;
+    margin-top: -12px;
+    font-size: 11px;
+    font-weight: 500;
+    width: 16px;
+    height: 16px;
+    background: crimson;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.div-c-float-icon{
+    position: absolute;
+    display: none;
+    margin-top: -10px;
+    margin-left: 13px;
+    font-size: 11px;
+    font-weight: 500;
+    width: 16px;
+    height: 16px;
+    background: crimson;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.li-type {
+    list-style-type: none;
+    font-size: 16px;
+    font-weight: 500;
+    width: 130px;
+    padding: 6px;
+    margin: 4px auto;
+    border: 1px solid #d1d1d1;
+    border-bottom-color: #c5c5c5;
+    border-radius: .25em;
+}
+
+.span-c-li{
+    display: inline-block;
+    padding-left: 21px;
+    width: 90px;
+    text-align: center;
+}
+
+#div_add_defact_box{
+    padding-top: 30px;
+}

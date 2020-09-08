@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueCheck</title>
+
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/select_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/public/script/select_and_route.js" type="text/javascript"></script>
+
+    <!--Floating Unsolved Defact Icon-->
+    <script>
+        function showIcon() {
+            var dong_data = [<%=dong_data%>];
+            dong_data.forEach(function(e, i) {
+                target = document.getElementById('d' + i);
+                if (e != 0) {
+                    target.style.display = 'inline-block';
+                    target.innerHTML = e;
+                }
+            });
+        }
+    </script>
+
+</head>
+
+<body onload="addList(); appendDong(); showIcon();">
+    <div class="div-view">
+        <div id="div_user_info">
+            <span id="span_user">
+                <% if(locals.name){ %> <%=locals.name%> <% } %>
+                <% if(locals.type){ %> <%=locals.type%>님<% }%>
+            </span>
+        </div>
+
+        <div class="div-select-box">
+            <div class="div-wrapper-backward">
+                <input type="button" id="backward-bt" value="＜" onclick="location.href = '/select/const';">
+            </div>
+            <div id="div-dong-box">
+                <div class="div-title">
+                    동 선택
+                </div>
+
+                <div id="div_dong_target" class="div-dong-list">
+                    <!--DONG APPEND-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueCheck</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/login_style.css">
+    <link rel="stylesheet" type="text/css" href="css/register_style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/register_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="div-view">
+        <div class="div-login-box">
+            <div class="div-wrapper-backward">
+                <input type="button" id="backward-bt" value="＜" onclick="location.href = '/';">
+            </div>
+            <div class="div-title">
+                관계자 회원가입
+            </div>
+            <div class="div-login-form">
+                <form class="form-reg" method="post" action="/reg_submit">
+                    <div class="div-wrapper-input">
+
+                        <label><input type="radio" name="type" value="기사" required>
+                            <div class="div-type-bt">기사님</div>
+                        </label>
+
+                        <label><input type="radio" name="type" value="반장" required>
+                            <div class="div-type-bt">반장님</div>
+                        </label>
+
+                    </div>
+                    <div class="div-wrapper-input">
+                        <input id="reg_id" name="id" placeholder="아이디" required autocomplete="off">
+                    </div>
+                    <div class="div-wrapper-input">
+                        <input type="password" name="pw" id="reg_pw" placeholder="비밀번호" required autocomplete="off">
+                    </div>
+                    <div class="div-wrapper-input">
+                        <input id="reg_name" name="name" placeholder="성명" required autocomplete="off">
+                    </div>
+                    <div class="div-wrapper-input">
+                        <input id="reg_tel" type="tel" name="tel" placeholder="휴대폰 (- 없이 입력)" required autocomplete="off">
+                    </div>
+                    <div class="div-wrapper-input">
+                        <input type="password" name="auth" id="reg_auth" placeholder="인증코드 입력" required autocomplete="off">
+                    </div>
+
+                    <div class="div-wrapper-submit">
+                        <input id="reg_submit_bt" type="submit" value="회원가입">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

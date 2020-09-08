@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueCheck</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/login_style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/login_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+</head>
+
+<body onload="document.getElementById('login_id').focus()">
+    <div class="div-view">
+        <div class="div-login-box">
+            <div class="div-title">
+                BlueCheck
+            </div>
+            <div class="div-login-form">
+                <form class="form-login" method="post" action="/process/login">
+                    <div class="div-login-left-input">
+                        <div class="div-wrapper-input">
+                            <input id="login_id" name="id" placeholder="아이디" autocomplete="off">
+                        </div>
+                        <div class="div-wrapper-input">
+                            <input type="password" name="password" id="login_pw" placeholder="비밀번호" autocomplete="off">
+                        </div>
+
+                    </div>
+                    <div class="div-login-right-input">
+                        <input id="login-submit-bt" type="submit" value="→" >
+                    </div>
+                    
+                </form>
+                <div class="div-join-bt">
+                    <span class="login-bt" onclick="location.href = '/register'">관계자 회원가입</span>
+                    <span class="login-bt" onclick="location.href = '/admin'">관리자 페이지</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

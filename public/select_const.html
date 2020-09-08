@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>베스트웨이</title>
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/add_defact_style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/select_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Floating Unsolved Defact Icon-->
+    <script>
+        function showIcon() {
+            var c_data = [<%= c_data %>];
+            c_data.forEach(function(e, i) {
+                target = document.getElementById('c' + i);
+                if (e != 0) {
+                    target.style.display = 'inline-block';
+                    target.innerHTML = e;
+                }
+
+            });
+        }
+
+    </script>
+    <script>
+        const ctype_list = ["조적공사", "미장공사", "방수공사", "석공사", "타일공사", "도장공사", "유리공사", "커튼월공사", "수장공사"];
+
+        function loadCtypeList() {
+            target = document.getElementById('div_ctype_list');
+            target.innerHTML = '';
+            for (var i = 0 in ctype_list) {
+                var innerCode = '<li class="li-type"><span class="span-c-li">' + ctype_list[i] + '</span><div class="div-c-float-icon" id="c' + i + '">&nbsp;</div></li>';
+                target.innerHTML += innerCode;
+            }
+        }
+
+        function logout() {
+                if(confirm('로그아웃 하시겠어요?') == true){location.href='/logout'} else return false;
+        }
+
+    </script>
+
+</head>
+
+<body onload="loadCtypeList(); showIcon();">
+    <div class="div-view">
+        <div class="div-logout-wrapper">
+            <span id="span_logout_bt" onclick="logout()">로그아웃</span>
+        </div>
+        <div id="div_add_defact_box">
+            <div class="div-title">공종 선택</div>
+            <div class="div-ctype-list" id="div_ctype_list">
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="/public/script/select_const.js"></script>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BlueCheck</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/detail_defact_style.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/detail_defact_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="div-view">
+        <div class="div-defact-box">
+            <div class="div-wrapper-backward">
+                <input type="button" id="backward-bt" value="＜" onclick=" location.href='/defact/list?dong=<%=dong%>&ho=<%=ho%>&loc=<%=loc%>'; ">
+            </div>
+            
+            <div class="div-wrapper-pdf-bt">
+                <span id="span-pdf-bt">표준시방서</span>
+            </div>
+            <% if (detailInfo.is_solved==0){%>
+            <div class="div-wrapper-finish">
+                <span id="span-defact-finish-bt" onclick="if(confirm('보수 완료로 변경할까요?'))location.href='/defact/make_solved'; else return false;">보수완료</span>
+            </div>
+            <% }%>
+            
+            
+            <div class="div-title">
+                하자 상세
+            </div>
+            <input id="hided_defactId" type="hidden" value="<%= detailInfo.id %>">
+            <div class="div-defact-image-box" style="background-image: url('/public/resources/defact_images<%= detailInfo.img %>');">
+               <div class="div-defact-due-box">
+                    <span class="span-due-title">기한</span><span id="span_due"><%=detailInfo.due_date%></span>
+                </div>
+                <!--defact image here-->
+                <div class="div-defact-table-box">
+                <!--defact detail here-->
+                <table class="table-defact">
+                    <tr>
+                        <td class="td-title">공사명</td>
+                        <td id="c_name"><%=detailInfo.construction_name%></td>
+                    </tr>
+                    <tr>
+                        <td class="td-title">공종</td>
+                        <td id="c_type"><%=detailInfo.construction_type%></td>
+                    </tr>
+                    <tr>
+                        <td class="td-title">위치</td>
+                        <td id="c_type"><%=detailInfo.dong%>동 <%=detailInfo.ho%>호 <%=detailInfo.room%></td>
+                    </tr>
+                    <tr>
+                        <td class="td-title">내용</td>
+                        <td id="d_type"><%=detailInfo.info%></td>
+                    </tr>
+                    <tr>
+                        <td class="td-title">일자</td>
+                        <td id="date"><%=detailInfo.create_date%></td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+            <div class="div-comment-box">
+               <hr class="hr-line">
+                <ul class="ul-comment-view-box">
+                   <% commentInfo.forEach(function(element){ %>
+                    <li class="li-comment" id="li_c_<%=element.id%>">
+                    <%=element.type%> <%=element.name%>:  <%=element.comment%>
+                    <% if (username == element.name) {%>
+                    <div class="div-comment-bt-box">
+                    <span class="span-comment-edit-bt" cid="<%=element.id%>" val="edit">
+                        수정
+                    </span>
+                    <span class="span-comment-delete-bt" cid="<%=element.id%>" val="delete">
+                        삭제
+                    </span></div>
+                    <%}%>
+                    <div id="div_input_<%=element.id%>">
+                        <!-- Edit Input Here -->
+                    </div>
+                    <% }); %>
+                </ul>
+                <div class="div-comment-bt-box">
+                    <form id="comment_form" action="/defact/add/comment" method="post">
+                       <input id="hide_defact_id" value='<%= detailInfo.id %>' name="defact_id">
+                        <input type="text" id="comment_input" name="inputComment" required autocomplete="off" maxlength="40">
+                        <input type="submit" id="add-comment-bt" value="＋" >
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div id="div_pdf_box">
+              <span id="span_pdf_close">닫기</span>
+               <div id="div_pdf_title">
+               표준시방서
+               </div>
+               <span class="span-highlight">PC/모바일 웹 환경</span> 
+               <div class="div-pdf-info">
+                   <a class="span-url" href="https://c11.kr/fv1f" target="_blank">링크</a>로 이동하세요.
+               </div>
+               <span class="span-highlight">앱 환경</span> 
+               <div class="div-pdf-info">
+                   웹 브라우저(Chrome, Safari..)를 열어서 주소 <span class="span-url">c11.kr/fv1f</span>로 이동하세요.
+               </div>
+        </div>
+        
+    </div>
+</body>
+<script type="text/javascript" src="/public/script/detail_defact.js"></script>
+</html>
