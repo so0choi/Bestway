@@ -16,10 +16,11 @@ var sendPush = token.sendPush;
 //-------------------
 
 var loadAddDefact = function (req, res) {
+    
     var selected_dong = req.query.dong,
         selected_ho = req.query.ho,
         selected_loc = req.query.loc;
-
+    if(req.session.user.userType==='기사'){
     fs.readFile('./public/add_defact.html', 'utf8', function (error, data) {
         res.send(ejs.render(data, {
             dong: selected_dong,
@@ -28,10 +29,17 @@ var loadAddDefact = function (req, res) {
             ctype: req.cookies.ctype
         }));
     });
+    }
+    else{
+        alertMsg = '하자 등록 권한이 없습니다';
+        backUrl = '/defact/list?dong=' + selected_dong + '&ho=' + selected_ho + '&loc=' + selected_loc;
+        res.send('<script type="text/javascript">alert("' + alertMsg + '"); location.href = "'+backUrl+'";</script>');
+    }
 };
 
 var addDefact = function (req, res) {
     if (req.session.user) {
+
         var c_name = req.body.construction_name; //공사명
         var loc = req.body.loc; //dong,ho,room 쪼개야함
         var dong = loc.substring(0, loc.lastIndexOf("동"));
@@ -71,6 +79,7 @@ var addDefact = function (req, res) {
                 
             }
         });
+        
     } else {
         res.send('<script type="text/javascript">alert("로그인 후 이용하세요."); window.location="/";</script>');
     }
