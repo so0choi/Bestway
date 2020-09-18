@@ -1,6 +1,10 @@
 ## BlueCheck
 🔨아파트 유지보수 시스템  
 Apartment Hot-Fix System
+
+You can test this service on this website.
+
+[TEST](http://13.125.159.57:3000/)
 <hr>
 
 ### Used Stack
@@ -11,7 +15,7 @@ Apartment Hot-Fix System
 <hr>
 
 ### Clone this git
-```git clone https://github.com/zinirun.BlueCheck.git```
+```git clone https://github.com/so0choi.bluecheck.git```
 
 ### Setup your database at your git repository
 - Open vim editor 
