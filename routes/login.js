@@ -9,8 +9,7 @@ const mySqlClient = mysql.createConnection(require('../config/db_config'));
 var login = function (req, res) {
 
     let checkId = req.body.id,
-        checkPwd = crypto.createHash('sha512').update(req.body.password).digest('base64');
-
+        checkPwd = crypto.createHash('sha512').update(req.body.password).digest('base64'); //sha512-base64 암호화
     var selectPwdSql = "select * from user where user_id = ? && password=?";
     var setToken = 'update user set token = ? where id=?;';
     mySqlClient.query(selectPwdSql, [checkId, checkPwd], function (err, row) {
