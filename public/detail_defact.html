@@ -18,9 +18,13 @@
                 <input type="button" id="backward-bt" value="＜" onclick=" location.href='/defact/list?dong=<%=dong%>&ho=<%=ho%>&loc=<%=loc%>'; ">
             </div>
             
+            <div class="div-wrapper-pdf-bt">
+                <span id="span-pdf-bt">표준시방서</span>
+            </div>
             <% if (detailInfo.is_solved==0){%>
             <div class="div-wrapper-finish">
-                <span id="span-defact-finish-bt">보수완료</span>
+               <!--make solved to SQL-->
+                <span id="span-defact-finish-bt" onclick="if(confirm('보수 완료로 변경할까요?'))location.href='/defact/make_solved'; else return false;">보수완료</span>
             </div>
             <% }%>
             
@@ -28,6 +32,7 @@
             <div class="div-title">
                 하자 상세
             </div>
+            <input id="hided_defactId" type="hidden" value="<%= detailInfo.id %>">
             <div class="div-defact-image-box" style="background-image: url('/public/resources/defact_images<%= detailInfo.img %>');">
                <div class="div-defact-due-box">
                     <span class="span-due-title">기한</span><span id="span_due"><%=detailInfo.due_date%></span>
@@ -63,10 +68,23 @@
                <hr class="hr-line">
                 <ul class="ul-comment-view-box">
                    <% commentInfo.forEach(function(element){ %>
-                    <li class="li-comment">
+                    <li class="li-comment" id="li_c_<%=element.id%>">
                     <%=element.type%> <%=element.name%>:  <%=element.comment%>
+                    <% if (username == element.name) {%>
+                    <div class="div-comment-bt-box">
+                    <span class="span-comment-edit-bt" cid="<%=element.id%>" val="edit">
+                        <!--view if elementid = usersessionid-->
+                        수정
+                    </span>
+                    <span class="span-comment-delete-bt" cid="<%=element.id%>" val="delete">
+                        <!--view if elementid = usersessionid-->
+                        삭제
+                    </span></div>
+                    <%}%>
+                    <div id="div_input_<%=element.id%>">
+                        <!-- Edit Input Here -->
+                    </div>
                     <% }); %>
-                
                 </ul>
                 <div class="div-comment-bt-box">
                     <form id="comment_form" action="/defact/add/comment" method="post">
@@ -77,6 +95,22 @@
                 </div>
             </div>
         </div>
+        
+        <div id="div_pdf_box">
+              <span id="span_pdf_close">닫기</span>
+               <div id="div_pdf_title">
+               표준시방서
+               </div>
+               <span class="span-highlight">PC/모바일 웹 환경</span> 
+               <div class="div-pdf-info">
+                   <a class="span-url" href="https://c11.kr/fv1f" target="_blank">링크</a>로 이동하세요.
+               </div>
+               <span class="span-highlight">앱 환경</span> 
+               <div class="div-pdf-info">
+                   웹 브라우저(Chrome, Safari..)를 열어서 주소 <span class="span-url">c11.kr/fv1f</span>로 이동하세요.
+               </div>
+        </div>
+        
     </div>
 </body>
 <script type="text/javascript" src="/public/script/detail_defact.js"></script>

@@ -1,14 +1,14 @@
-.div-defact-box{
+.div-defact-box {
     padding-top: 30px;
 }
 
-.div-wrapper-finish{
+.div-wrapper-finish {
     float: left;
 }
 
-.div-wrapper-finish #span-defact-finish-bt, #span-defact-saw-bt{
+.div-wrapper-finish #span-defact-finish-bt {
     position: absolute;
-    margin-top: 5px;
+    margin-top: 7px;
     margin-left: 246px;
     font-size: 16px;
     font-weight: 500;
@@ -19,8 +19,21 @@
     text-align: center;
 }
 
+#span-pdf-bt {
+    position: absolute;
+    margin-top: -25px;
+    margin-left: 246px;
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    padding: 2px 4.5px 4px 4.5px;
+    background: #DC6161;
+    border: none;
+    text-align: center;
+}
 
-.div-defact-image-box{
+
+.div-defact-image-box {
     margin: 10px auto 15px;
     width: 310px;
     height: 300px;
@@ -28,7 +41,7 @@
     background-size: 310px 300px;
 }
 
-li{
+li {
     margin-left: -25px;
     list-style-type: none;
     font-size: 15px;
@@ -36,39 +49,39 @@ li{
     color: #333;
 }
 
-.hr-line{
+.hr-line {
     border: 0.5px solid #ddd;
     width: 80%;
 }
 
-.div-defact-table-box{
+.div-defact-table-box {
     position: absolute;
     margin-left: 3px;
     margin-top: 173px;
     display: inline-block;
 }
 
-.table-defact{
+.table-defact {
     background: white;
     border-spacing: 0;
 }
 
-td{
+td {
     font-size: 11px;
-/*    text-align: center;*/
+    /*    text-align: center;*/
     border: 1px solid #ddd;
 }
 
-.td-title{
+.td-title {
     text-align: center;
     font-weight: 500;
 }
 
-form{
+form {
     text-align: center;
 }
 
-#comment_input{
+#comment_input {
     border: 1px solid #bbb;
     font-size: 16px;
     font-weight: 500;
@@ -77,7 +90,7 @@ form{
     padding-left: 3px;
 }
 
-#add-comment-bt{
+#add-comment-bt {
     padding: 0px;
     width: 25px;
     font-size: 19px;
@@ -87,14 +100,13 @@ form{
     border: none;
 }
 
-#hide_defact_id{
-    display:none;
+#hide_defact_id {
+    display: none;
 }
 
-.div-defact-due-box{
-}
+.div-defact-due-box {}
 
-.span-due-title{
+.span-due-title {
     background: #DC6373;
     color: white;
     font-size: 12px;
@@ -102,10 +114,96 @@ form{
     padding: 1px 4px;
 }
 
-#span_due{
+#span_due {
     background: #F8CAD0;
     font-size: 12px;
     font-weight: 500;
     padding: 1px 4px;
     border-radius: 0px 0px 4px 0px;
+}
+
+#div_pdf_box {
+    display: none;
+    background: #D4ECFF;
+    height: 270px;
+    padding-top: 7px;
+    border-radius: 10px;
+}
+
+#div_pdf_title {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+
+#span_pdf_close {
+    padding: 3px 4px;
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    background: crimson;
+    float: right;
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+.div-comment-bt-box {
+    float: right;
+    color: #777;
+    font-size: 13px;
+}
+
+.span-comment-delete-bt {
+    color: #F76262;
+}
+
+.input-edit {
+    font-size: 15px;
+    width: 230px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 3px;
+}
+
+.edit-commit-bt {
+    background: dodgerblue;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    padding: 4px;
+    margin: 5px 3px;
+    border: none;
+    border-radius: 3px;
+}
+
+.div-pdf-info {
+    margin-top: 2px;
+    margin-bottom: 15px;
+    background: #A8D7FF;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.span-highlight {
+    font-size: 16px;
+    font-weight: 500;
+    background: dodgerblue;
+    border-radius: 4px 4px 0 0;
+    padding: 2px 4px;
+    margin-left: 0px;
+    color: white;
+
+}
+
+.span-url {
+    font-weight: 500;
+    background: white;
+    color: #008AFF;
+    text-decoration: none;
+    border-radius: 3px;
+    padding: 2px 4px;
 }

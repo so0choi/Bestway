@@ -78,9 +78,11 @@ var defact = require('./routes/defact.js');
 router.route('/defact/list/').get(defact.defactList);
 //하자 세부 페이지 라우터
 router.route('/defact/detail/').get(defact.defactDetailList);
-//하자 상세 페이지 댓글 등록 라우터
+//하자 상세 페이지 댓글 라우터
 router.route('/defact/add/comment/').post(defact.defactAddComment);
-//
+router.route('/defact/edit/comment/').post(defact.defactEditComment);
+router.route('/defact/delete/comment/').get(defact.defactDeleteComment);
+//하자 상세 수정 라우터
 router.route('/defact/make_solved').get(defact.defactMakeSolved);
 router.route('/defact/make_reject/').get(defact.rejectOrPass);
 
